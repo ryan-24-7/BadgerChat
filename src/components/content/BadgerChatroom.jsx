@@ -46,10 +46,11 @@ export default function BadgerChatroom(props) {
         })
             .then(res => {
                 if(res.status == 413) {
-                    setError("Title must be 128 characters or fewer and Content must be 1024 characters or fewer")
+                    setError("Title must be 128 characters or fewer and Content must be 1024 characters or fewer");
+                    return;
                 }
                 if (res.ok) {
-                    return res.json()
+                    return res.json();
                 }
             })
             .then(data => {
